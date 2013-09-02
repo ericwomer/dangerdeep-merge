@@ -1,0 +1,322 @@
+file /home/salamanderrake/src/dangerdeep/svn/SConstruct,line 302:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library GL... 
+scons: Configure: ".sconf_temp/conftest_0.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_0.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_0.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_0.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_0.c
+  |
+scons: Configure: ".sconf_temp/conftest_0" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_0 `pkg-config --libs-only-L x11` .sconf_temp/conftest_0.o -L/usr/lib64 -L/usr/lib64/X11 -L/usr/X11R6/lib -Lbuild/linux -lGL
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library GLU... 
+scons: Configure: ".sconf_temp/conftest_1.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_1.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_1.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_1.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_1.c
+  |
+scons: Configure: ".sconf_temp/conftest_1" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_1 `pkg-config --libs-only-L x11` .sconf_temp/conftest_1.o -L/usr/lib64 -L/usr/lib64/X11 -L/usr/X11R6/lib -Lbuild/linux -lGL -lGLU
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library SDL... 
+scons: Configure: ".sconf_temp/conftest_2.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_2.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_2.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_2.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_2.c
+  |
+scons: Configure: ".sconf_temp/conftest_2" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_2 `pkg-config --libs-only-L x11` .sconf_temp/conftest_2.o -L/usr/lib64 -L/usr/lib64/X11 -L/usr/X11R6/lib -Lbuild/linux -lGL -lGLU -lSDL
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library SDL_image... 
+scons: Configure: ".sconf_temp/conftest_3.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_3.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_3.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_3.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_3.c
+  |
+scons: Configure: ".sconf_temp/conftest_3" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_3 `pkg-config --libs-only-L x11` .sconf_temp/conftest_3.o -L/usr/lib64 -L/usr/lib64/X11 -L/usr/X11R6/lib -Lbuild/linux -lGL -lGLU -lSDL -lSDL_image
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library SDL_mixer... 
+scons: Configure: ".sconf_temp/conftest_4.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_4.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_4.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_4.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_4.c
+  |
+scons: Configure: ".sconf_temp/conftest_4" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_4 `pkg-config --libs-only-L x11` .sconf_temp/conftest_4.o -L/usr/lib64 -L/usr/lib64/X11 -L/usr/X11R6/lib -Lbuild/linux -lGL -lGLU -lSDL -lSDL_image -lSDL_mixer
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library fftw3... 
+scons: Configure: ".sconf_temp/conftest_5.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_5.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_5.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_5.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_5.c
+  |
+scons: Configure: ".sconf_temp/conftest_5" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_5 `pkg-config --libs-only-L x11` .sconf_temp/conftest_5.o -L/usr/lib64 -L/usr/lib64/X11 -L/usr/X11R6/lib -Lbuild/linux -lGL -lGLU -lSDL -lSDL_image -lSDL_mixer -lfftw3
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library bz2... 
+scons: Configure: ".sconf_temp/conftest_6.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_6.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_6.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_6.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_6.c
+  |
+scons: Configure: ".sconf_temp/conftest_6" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_6 `pkg-config --libs-only-L x11` .sconf_temp/conftest_6.o -L/usr/lib64 -L/usr/lib64/X11 -L/usr/X11R6/lib -Lbuild/linux -lGL -lGLU -lSDL -lSDL_image -lSDL_mixer -lfftw3 -lbz2
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file gl.h... 
+scons: Configure: ".sconf_temp/conftest_7.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_7.c <-
+  |  |
+  |  |#include <gl.h>
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_7.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_7.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_7.c
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file glu.h... 
+scons: Configure: ".sconf_temp/conftest_8.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_8.c <-
+  |  |
+  |  |#include <glu.h>
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_8.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_8.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_8.c
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file SDL.h... 
+scons: Configure: ".sconf_temp/conftest_9.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_9.c <-
+  |  |
+  |  |#include <SDL.h>
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_9.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_9.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_9.c
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file SDL_image.h... 
+scons: Configure: ".sconf_temp/conftest_10.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_10.c <-
+  |  |
+  |  |#include <SDL_image.h>
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_10.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_10.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_10.c
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file SDL_mixer.h... 
+scons: Configure: ".sconf_temp/conftest_11.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_11.c <-
+  |  |
+  |  |#include <SDL_mixer.h>
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_11.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_11.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_11.c
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file fftw3.h... 
+scons: Configure: ".sconf_temp/conftest_12.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_12.c <-
+  |  |
+  |  |#include <fftw3.h>
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_12.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_12.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_12.c
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file bzlib.h... 
+scons: Configure: ".sconf_temp/conftest_13.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_13.c <-
+  |  |
+  |  |#include <bzlib.h>
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_13.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_13.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_13.c
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library fftw3f... 
+scons: Configure: ".sconf_temp/conftest_14.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_14.c <-
+  |  |
+  |  |
+  |  |#include "fftw3.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_14.o" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_14.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_14.c
+  |
+scons: Configure: ".sconf_temp/conftest_14" is up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_14 `pkg-config --libs-only-L x11` .sconf_temp/conftest_14.o -L/usr/lib64 -L/usr/lib64/X11 -L/usr/X11R6/lib -Lbuild/linux -lGL -lGLU -lSDL -lSDL_image -lSDL_mixer -lfftw3 -lbz2 -lfftw3f
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library avutil... 
+scons: Configure: ".sconf_temp/conftest_15.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_15.c <-
+  |  |
+  |  |
+  |  |#include "ffmpeg/libavutil/avutil.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: Building ".sconf_temp/conftest_15.o" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |gcc -o .sconf_temp/conftest_15.o -c -Wall `sdl-config --cflags` `pkg-config --cflags x11` -march=x86-64 -g -O2 -DDEBUG -DTIXML_USE_STL -DWITH_FLOAT_FFTW -I/usr/include/SDL -I/usr/include/GL .sconf_temp/conftest_15.c
+  |
+scons: Configure: (cached) no
+
+

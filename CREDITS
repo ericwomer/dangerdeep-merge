@@ -1,0 +1,30 @@
+The project was created and initial code was written by
+Thorsten Jordan <thorsten_jordan@gmx.de>
+
+Further contributors in order of appearance:
+
+Christian Kolaß (Models: Bogue carrier, all merchants)
+
+Markus Petermann (developer)
+
+Viktor Radnai (Debian package, website, bug reporting)
+
+Luis Barrancos [LuisB] (Graphics, Model building)
+
+Guiseppe Borzi (Italian translation, Mandrake packaging)
+
+Nico Sakschewski (Win32 Compilation)
+
+Alexandre Paes ([apaes] developer)
+
+Nemessica and Marc Roisé (Dangerdeep manual, polish, and polish translation)
+
+Matt Lawrence (Correct moon/sky blend modes, missing file indication before bailing out)
+
+Marco Sarolo ([bigbosslima] sound effects)
+
+Let me know if I have forgotten someone.
+
+NOTE! The ingame credits text is more up to date, it can be found in
+src/credits.h
+

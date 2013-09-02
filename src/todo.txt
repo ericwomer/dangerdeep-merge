@@ -1,0 +1,67 @@
+THIS FILE IS FOR SOME SHORT NOTES FROM DEVELOPERS...
+
+Next changes:
+-------------
+
+idea: store all physic data/states centralized
+-> easier simulation, simd possible.
+-> multithreading possible, 2nd thread computes next
+   physic state from current, when ready and main thread
+   has finished display, copy/swap physic data and
+   continue.
+   needs some alloc/handling of physical data...
+
+
+SIMULATE THE PASSIVE SONAR (HEARING EQUIPMENT)
+- KGB/GHG/BG machines
+- do not call sonar_ships() for each frame that is drawn on the screen,
+  but call at once per second or less and store or cache the results.
+  Do this for all similar actions. No need to redetect ships 30 or more
+  times per second. Once per second is enough. This will lessen CPU usage
+  dramatically and we can use more complex algorithms to simulate sensors
+  etc., because we can use more costly algos if they're called more seldom.
+  Store data in game or per object?
+  The data is stored for the player, but there may be multiple players and
+  the AI controlled objects may call such functions as well.
+  So store the results per object. We do not need to save them to a savegame.
+  Cacheable functions: game::visible_*, game::sonar_*, game::radar_*
+	DONE, NEXT: do not store pointers per sonar contact (and even radar
+	contact?) but only type of signal and direction!
+	after that implement sensor classes for kdb/ghg/bg
+
+
+DAMAGE SIMULATION
+- with example data
+
+ACCURATE PHYSICS
+- buoyancy simulation
+- trim
+
+IDEAS ABOUT WATER
+- render foam not in a two-step process like it is now, but render
+  (animated) foam texture on top of water. Give amount of foam per vertex,
+  the amount is computed by the CPU. For each trail or object causing foam
+  determine which vertices are "inside" the trail and compute the amount of
+  foam to generate for each vertex. This needs intersection code for
+  face-face or point-face cases. But it is rather simple and can go fast.
+  To weak wave heights (e.g. for explosions or objects interacting with the
+  water, we would have to touch each generated vertex anyway).
+  This removes the 512x512 texture rendering of the first step of foam and
+  removes the ugly effects where you can see foam as filtered pixels in the
+  distance.
+  And we can generate foam for wave tops. In theory foam is generated on
+  each wave top when the wave breaks, this means on local maxima of the
+  height. So compute the differential of the heights, all values near to
+  zero are local maxima (or minima). Simpler algorithms are possible, as
+  proposed by nvidia: determine by height of wave, only heighest waves
+  generate foam, this means waves above a critical height. Only crests
+  should reach this height, not smooth round waves, so it should be
+  realistic.
+
+CVS
+- check that binary files have binary flag
+  models/ sounds/ !
+
+- use vertex buffer objects to render water
+- use GL_USHORT for indices, saving 50% memory and possibly bandwidth.
+- VBOs should have 64k vertices max for compatibility reasons (GF4MX)

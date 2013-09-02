@@ -1,0 +1,12 @@
+# Scons Generated Files
+.sconf_temp/
+.sconsign.dblite
+
+# Build Generated Files
+build/linux/dangerdeep
+*.o
+*.a
+
+# Game Data Directory 
+# will be moved to its own repo
+data/

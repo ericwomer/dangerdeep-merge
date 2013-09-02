@@ -1,0 +1,28 @@
+#!/bin/bash
+VERSION=`cat version.txt`
+TMP=.tmp
+BASEDIR=dangerdeep-$VERSION
+rm -rf $TMP
+mkdir $TMP
+mkdir $TMP/$BASEDIR
+cp dangerdeep-$VERSION.tar.gz $TMP
+cd $TMP
+tar zxf dangerdeep-$VERSION.tar.gz
+rm dangerdeep-$VERSION.tar.gz
+cd ..
+cp build/win32/dangerdeep.exe $TMP/$BASEDIR
+cp dlls/*.dll $TMP/$BASEDIR
+for i in INSTALL ARTWORK_LICENSE LICENSE README CREDITS ChangeLog; do cp $i $TMP/$BASEDIR ; done
+mkdir $TMP/$BASEDIR/config
+echo "Win32 cfg dir" > $TMP/$BASEDIR/config/x
+mkdir $TMP/$BASEDIR/save
+echo "Win32 save dir" > $TMP/$BASEDIR/save/x
+mkdir $TMP/$BASEDIR/highscores
+echo "Win32 highscores dir" > $TMP/$BASEDIR/highscores/x
+cd $TMP
+rm -rf $BASEDIR/src
+rm -rf $BASEDIR/build
+zip -9r dangerdeep-$VERSION-win32.zip *
+cd ..
+mv $TMP/dangerdeep-$VERSION-win32.zip .
+rm -rf $TMP

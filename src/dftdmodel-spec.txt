@@ -1,0 +1,332 @@
+Structure of DftD-model files
+-----------------------------
+
+The Dftd Model files are in XML format, they're sometimes called ddxml
+because of this. This file describes their structure and meaning of the
+content. It describes version 1.2. 
+
+
+Each data file starts with the XML header:
+
+<?xml version="1.0" encoding="ISO_8859-1" standalone="yes"?>
+
+The root node of the XML file is a of type "dftd-model". I will now
+describe all node types and how they are structured. I'll list all node
+types, their possible children nodes and their attributes.
+
+"triple" means triple of value, separated by (white)spaces.  e.g. triple
+of float is "x y z", a list of float triples is "x1 y1 z1 x2 y2 z2 ..."
+
+
+Node tree
+=========
+(? means optional, * means multiple possible)
+
+dftd-model
+|
++---material * ?
+|      |
+|      +----diffuse ?
+|      +----specular ?
+|      +----shininess ?
+|      +----map ?
+|
++---mesh *
+|     |
+|     +----vertices
+|     +----indices
+|     +----texcoords ?
+|     +----normals ?
+|
++---light * ?
+|
++---objecttree
+    |
+    +----object *
+    |    |
+    |    +----object *
+    |    ...
+    |
+    +----object*
+    |    ...
+    ...
+
+Node: dftd-model
+================
+Root node of the XML model file.
+
+Attributes:
+(float) version - version of the model file. For information purposes.
+
+Children: material, mesh, light - Children can appear in any order,
+except the following rules: mesh nodes may reference material nodes. A
+material node must occour before a reference (an id value) to it
+occours.  At least one mesh must be defined.
+
+
+Node: material
+==============
+Describes a material.
+
+Attributes:
+(string) name - material name for description.
+(int) id - number for referencing, must be unique for materials.
+
+Children: diffuse, specular, shininess, map - each node is optional, at
+most one of type ambient, diffuse or specular may be defined. At most
+one map of each type may be defined.
+
+
+Node: diffuse
+=============
+Describes diffuse color.
+
+Attributes:
+(triple of float) color - diffuse color. Only used when no diffuse map
+given. Also used as ambient color.
+
+
+Node: specular
+==============
+Describes specular color.
+
+Attributes:
+(triple of float) color - specular color.
+
+
+Node: shininess
+===============
+Describes specular shininess (H.N^shininess),
+Blinn-phong exponent. Half-angle dot normal will
+be powered by this exponent.
+
+Attributes:
+(float) exponent - shininess as exponent.
+
+
+Node: map
+=========
+Describes a map of the material (sub-property)
+The specularmap uses the same transformation as the normal map.
+
+Attributes:
+(string) type - can be "diffuse", "normal" or "specular"
+(string) filename - any image image containing the map data
+(float) uscal - scaling of u coordinates (ignored for specular)
+(float) vscal - scaling of v coordinates (ignored for specular)
+(float) uoffset - offset of u coordinates (ignored for specular)
+(float) voffset - offset of v coordinates (ignored for specular)
+(float) angle - rotation angle of u,v coordinates, in ccw direction
+                (ignored for specular)
+
+
+Node: mesh
+==========
+Describes a mesh of the model.
+
+Attributes:
+(string) name - mesh name for description.
+(int) id - unique id, used as reference from the object tree.
+(int) material - material id to use for this mesh
+
+Children: vertices, indices (both mandatory), texcoords, normals
+(each optional)
+
+
+Node: vertices
+==============
+Vertex data for mesh. Mandatory.
+
+Attributes:
+(int) nr - number of vertices
+
+Sub-text-node:
+(list of triple of float) data
+
+
+Node: indices
+=============
+Index data for mesh. Mandatory.
+
+Attributes:
+(int) nr - number of indices. Must be multiple of three, because mesh
+data are triangles.
+
+Sub-text-node:
+(list of triple of float) data
+
+
+Node: texcoords
+===============
+Texture coordinate data for mesh. Optional.
+
+Attributes:
+none
+
+Sub-text-node:
+(list of pair of float) data
+
+
+Node: normals
+=============
+Normal data for mesh. Optional.
+
+Attributes:
+none
+
+Sub-text-node:
+(list of triple of float) data
+
+
+Node: light
+===========
+Describes a light. Color is the same for ambient, diffuse and specular.
+
+Attributes:
+(string) name - descriptive name.
+(float triple) pos - light position
+(float triple) color - light color
+(float) ambient - amount of ambient of light (0...1)
+
+
+Node: objecttree
+================
+There must be at most one node of this type in the file.
+If there is a node of this type in the file it describes how the
+meshes are rendered. If there is no node of this type, all objects
+are rendered as independent objects. This node has to be defined after
+all mesh nodes.
+Possible subnodes: object
+
+
+Node: object
+============
+Represents an object. Each object can store a transformation in relation
+to its parent. The transformation is defined with subnodes.
+There shall be at most one subnode of type translation or rotation each.
+The child is rendered by firstly applying the translation, then the rotation.
+
+Attributes:
+(int) id - an unique number, used for referencing the object from the outside
+(int) mesh - an id referencing a mesh, that has the 3d data to be rendered
+             for that object. This number is one of the id's given as attribute
+             of a mesh node defined in the ddxml file.
+	     It is allowed to give no such attribute. In that case there is no mesh
+	     drawn for the object, but the object can have children...
+(string) name - an unique name, can also be used to reference the object
+
+Possible subnodes: object, translation, rotation
+
+
+Node: translation
+=================
+Stores a translation.
+
+Attributes:
+(float triple) vector - x,y,z coordinates of translation
+(string/float double) constraint - "V min max" min/max value for movement along
+                                   axis, where possible axes are x,y,z.
+                                   E.g. "x -20 20". You can use exactly one
+                                   axis here. So the translation is in one
+                                   dimension.
+                                   
+
+
+Node: rotation
+==============
+Stores an arbitrary rotation, with minimum and maximum angle.
+
+Attributes:
+(float triple) axis - axis of rotation
+(float) angle - default angle of rotation
+(float) minangle - minimum angle of rotation
+(float) maxangle - maximum angle of rotation
+
+
+
+old documentation, example
+==========================
+
+XML format.
+
+<?xml version="1.0" encoding="ISO_8859-1" standalone="yes"?>
+
+--> Version string is used for information purposes.
+
+<dftd-model version="1.1">
+
+--> A long list with children: materials, meshes and lights, in this order:
+
+--> Materials:
+
+  <material name="Any name you want" id="unique id">
+
+----> can be listed, if not default is 1,1,1  1,1,1  1,1,1 (can change)
+
+diffuse color is used when no diffuse map is given.
+
+    <diffuse color="floatr floatg floatb" />
+    <specular color="floatr floatg floatb" />
+    <shininess exponent="float" />
+
+----> at most one of each type
+----> give u,v scaling and offset and u,v rotation angle. If not given, default values
+----> are used. (scal=1.0, offset=0.0, angle=0.0). Give angle in degrees.
+
+can there be no maps? yes...
+
+    <map type="diffuse/normal/specular" filename="foo" uscal="float" vscal="float"
+      uoffset="float" voffset="float" angle="float" />
+
+  </material>
+
+--> Meshes:
+--> Material id is optional, a default material is used when omitted.
+
+  <mesh name="Any name you want" id="unique id" material="material id">
+
+----> childs in this order:
+----> mandatory:
+
+    <vertices nr="(int) nr of vertices">
+       ...endless line of floats, divided by (white)spaces, 3x nr in number.
+    </vertices>
+
+    <indices nr="(int) nr of indices">
+       ...endless line of ints, divided by (white)spaces, 1x nr in number, nr should be
+       multiple of three, because we have triangles here.
+    </indices>
+
+----> mandatory if material id is given:
+
+    <texcoords>
+       ...endless line of floats, divided by (white)spaces, 2x nr of vertices in number.
+    </texcoords>
+
+----> optional:
+
+    <normals>
+       ...endless line of floats, divided by (white)spaces, 3x nr of vertices in number.
+    </normals>
+
+  </mesh>
+
+--> Lights:
+
+  <light name="Any name you want" pos="floatx floaty float z" color="floatr floatg float b"
+           ambient="float-amount" />
+
+</dftd-model>
+
+============================================================================================
+Changes for Version:
+1.1: ambient value per material removed. Ambient color is the same as
+     diffuse color, when the latter is used (only when no texture map is
+     given).
+     Lights have now an ambient value from 0...1. The higher it is the more
+     ambient will be in the scene.
+     Shininess of material can be given now.
+
+1.2: added node objecttree
+
+1.3: removed transformation nodes as child from mesh node. Deprecated/obsolete.
