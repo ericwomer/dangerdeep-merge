@@ -10,3 +10,6 @@ build/linux/dangerdeep
 # Game Data Directory 
 # will be moved to its own repo
 data/
+
+# QtCreator generated files
+*.user
